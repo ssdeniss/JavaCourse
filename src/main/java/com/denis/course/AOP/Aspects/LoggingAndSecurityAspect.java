@@ -28,7 +28,7 @@ public class LoggingAndSecurityAspect {
 //    private void allGetMethods() {
 //    }
 //
-// ?   @Before("allGetMethods()")
+//    @Before("allGetMethods()")
 //    public void beforeGetLoggingAdvice() {
 //        System.out.println("beforeGetLoggingAdvice: try to get book or magazine");
 //    }
@@ -72,23 +72,23 @@ public class LoggingAndSecurityAspect {
 //        System.out.println("beforeGetAndReturnLoggingAdvice: writing Log #3");
 //    }
 
-
-    @Pointcut("execution(* com.denis.course.AOP.UniLibrary.*(..))")
-    private void allMethodsFromUniLibrary() {
-    }
-
-    @Pointcut("execution(public void com.denis.course.AOP.UniLibrary.returnMagazine())")
-    private void returnMagazineFromUniLibrary() {
-
-    }
-
-    @Pointcut("allMethodsFromUniLibrary() && !returnMagazineFromUniLibrary()")
-    private void allMethodsExceptReturnMagazineFromUniLibrary() {
-
-    }
-
-    @Before("allMethodsExceptReturnMagazineFromUniLibrary()")
-    public void beforeAllMethodsExceptReturnMagazineAdvice() {
-        System.out.println("beforeAllMethodsExceptReturnMagazineAdvice: Log #4");
-    }
+//
+//    @Pointcut("execution(* com.denis.course.AOP.UniLibrary.*(..))")
+//    private void allMethodsFromUniLibrary() {
+//    }
+//
+//    @Pointcut("execution(public void com.denis.course.AOP.UniLibrary.returnMagazine())")
+//    private void returnMagazineFromUniLibrary() {
+//
+//    }
+//
+//    @Pointcut("allMethodsFromUniLibrary() && !returnMagazineFromUniLibrary()")
+//    private void allMethodsExceptReturnMagazineFromUniLibrary() {
+//
+//    }
+//
+//    @Before("allMethodsExceptReturnMagazineFromUniLibrary()")
+//    public void beforeAllMethodsExceptReturnMagazineAdvice() {
+//        System.out.println("beforeAllMethodsExceptReturnMagazineAdvice: Log #4");
+//    }
 }

@@ -6,10 +6,10 @@ import org.springframework.stereotype.*;
 
 @Component
 @Aspect
-@Order(2)
-public class SecurityAspect {
+@Order(1)
+public class LoggingAspect {
     @Before("com.denis.course.AOP.Aspects.MyPointcuts.allGetMethods()")
-    public void beforeGetSecurityAdvice() {
-        System.out.println("beforeGetSecurityAdvice: checking the rights for receiving book or magazine");
+    public void beforeGetLoggingAdvice() {
+        System.out.println("beforeGetLoggingAdvice: try to get book or magazine");
     }
 }
