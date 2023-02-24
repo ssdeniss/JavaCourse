@@ -1,4 +1,4 @@
-package com.denis.course;
+package com.denis.course.Config;
 
 public interface Pet {
     public void speak();

@@ -1,4 +1,4 @@
-package com.denis.course;
+package com.denis.course.Config;
 
 public class Main {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package com.denis.course;
+package com.denis.course.Config;
 
 import org.springframework.context.support.*;
 
@@ -9,9 +9,9 @@ public class Main3 {
 
 
         Person person1 = context.getBean("person", Person.class);
-        Person person2 = context.getBean("person", Person.class);
         person1.callPet();
-        person2.callPet();
+        System.out.println(person1.getName());
+        System.out.println(person1.getAge());
         context.close();
     }
 }

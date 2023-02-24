@@ -1,4 +1,4 @@
-package com.denis.course;
+package com.denis.course.Config;
 
 import org.springframework.context.support.*;
 
