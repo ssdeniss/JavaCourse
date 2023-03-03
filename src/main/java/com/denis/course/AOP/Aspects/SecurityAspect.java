@@ -8,8 +8,9 @@ import org.springframework.stereotype.*;
 @Aspect
 @Order(2)
 public class SecurityAspect {
-    @Before("com.denis.course.AOP.Aspects.MyPointcuts.allGetMethods()")
-    public void beforeGetSecurityAdvice() {
-        System.out.println("beforeGetSecurityAdvice: checking the rights for receiving book or magazine");
+    @Before("com.denis.course.AOP.Aspects.MyPointcuts.allAddMethods()")
+    public void beforeAddSecurityAdvice() {
+        System.out.println("beforeAddSecurityAdvice: checking the rights for receiving book or magazine");
+        System.out.println("--------------------------------");
     }
 }

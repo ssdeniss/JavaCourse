@@ -8,8 +8,9 @@ import org.springframework.stereotype.*;
 @Aspect
 @Order(3)
 public class ExceptionHandlingAspect {
-    @Before("com.denis.course.AOP.Aspects.MyPointcuts.allGetMethods()")
-    public void beforeGetExceptionHandlingAdvice() {
-        System.out.println("beforeGetExceptionHandlingAdvice: catching and processing exceptions when trying to get a book");
+    @Before("com.denis.course.AOP.Aspects.MyPointcuts.allAddMethods()")
+    public void beforeAddExceptionHandlingAdvice() {
+        System.out.println("beforeAddExceptionHandlingAdvice: catching and processing exceptions when trying to get a book");
+        System.out.println("--------------------------------");
     }
 }
