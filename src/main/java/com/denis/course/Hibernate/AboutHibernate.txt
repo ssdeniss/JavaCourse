@@ -1,0 +1,5 @@
+- Hibernate is a framework, which is used for saving, receiving, changing and deleting
+Java Objects in Data Base
+- ORM, Object to Relational Mapping is  transforming an object to string in the table and reverse
+- Using sql commands: save, get ...
+- CRUDt: Create, Read, Update, Delete
