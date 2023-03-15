@@ -21,7 +21,10 @@ public class Detail {
     @Column(name = "email")
     private String email;
 
-    public Detail(String city, String phoneNumber, String email){
+    @OneToOne(mappedBy = "empDetail", cascade = CascadeType.ALL)
+    private Employee employee;
+
+    public Detail(String city, String phoneNumber, String email) {
         this.city = city;
         this.phoneNumber = phoneNumber;
         this.email = email;

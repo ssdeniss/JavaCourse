@@ -1,11 +1,10 @@
 package com.denis.course.Hibernate.Connections.OneToOne;
 
-
 import com.denis.course.Hibernate.Connections.OneToOne.Entity.*;
 import org.hibernate.*;
 import org.hibernate.cfg.*;
 
-public class OneToOne {
+public class OneToOneBi {
     public static void main(String[] args) {
         SessionFactory factory = new Configuration()
                 .configure("hibernate.cfg.xml")
@@ -15,17 +14,16 @@ public class OneToOne {
 
         Session session = factory.getCurrentSession();
         try {
+            Employee employee = new Employee("Nikolay", "Fitulin", "Manager", 1000);
+            Detail detail = new Detail("Moscow", "232323", "Nikolay.Fitulin@com");
+
+            employee.setEmpDetail(detail);
+            detail.setEmployee(employee);
             session.beginTransaction();
-//                    Employee employee = new Employee("Oleg", "Porister", "HR", 1200);
-//                    Detail detail = new Detail("Cricova", "546744", "Oleg.Porister@com");
+            session.save(detail);
 
-//                    employee.setEmpDetail(detail);
-//
-//                    session.save(employee);
-            Employee emp = session.get(Employee.class, 1);
-//            session.delete(emp); // Delete object and details
-            System.out.println(emp.getEmpDetail());
-
+            Employee employeeDetail = session.get(Employee.class, 1); // Get employer
+            Detail detailEmployer = session.get(Detail.class, 1); // Get details
 
             session.getTransaction().commit();
         } finally {
