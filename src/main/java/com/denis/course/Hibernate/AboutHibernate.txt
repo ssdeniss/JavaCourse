@@ -2,4 +2,25 @@
 Java Objects in Data Base
 - ORM, Object to Relational Mapping is  transforming an object to string in the table and reverse
 - Using sql commands: save, get ...
-- CRUDt: Create, Read, Update, Delete
+- CRUD: Create, Read, Update, Delete
+
+- Connection between tables
+
+    One-to-One : School - Director
+
+                            / Employee
+    One-to-Many: Department - Employee
+                            \ Employee
+
+                 Employee \
+    Many-to-One: Employee - Department
+                 Employee /
+
+                  Employee \  Task
+    Many-to-Many: Employee  / Task
+                  Employee - Task
+
+
+- Primary key: is unique column what identify a row (they cannot be repeated, no null)
+- Foreign Key: us used for connection between tables, usually FK is a column what refers to PK column at another table
+    for example table employees contain column with her departmentId from table departments

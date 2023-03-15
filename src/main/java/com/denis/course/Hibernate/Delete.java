@@ -4,24 +4,28 @@ import com.denis.course.Hibernate.Entity.*;
 import org.hibernate.*;
 import org.hibernate.cfg.*;
 
-public class GetEmployer {
+import java.util.*;
+
+public class Delete {
     public static void main(String[] args) {
         SessionFactory factory = new Configuration()
                 .configure("hibernate.cfg.xml")
                 .addAnnotatedClass(Employee.class)
                 .buildSessionFactory();
-// Without session, you can't do some operations with java objects
         try {
             Session session = factory.getCurrentSession();
-            Employee emp = new Employee("Oleg", "Smirnov", "IT", 500);
             session.beginTransaction();
-            session.save(emp);
 
-            int myId = emp.getId();
-            Employee employee = session.get(Employee.class, myId);
+            Employee emp = session.get(Employee.class, 2); // Delete employer with id = 2
+            session.delete(emp);
+
+            session.createQuery("delete Employee " + "where name = 'Alex'"); // Delete employer with name Alex
+
+            List emps = session.createQuery("from Employee").getResultList();
             session.getTransaction().commit();
-            System.out.println(employee);
-
+            for (Object e : emps) {
+                System.out.println(e);
+            }
         } finally {
             factory.close();
         }
