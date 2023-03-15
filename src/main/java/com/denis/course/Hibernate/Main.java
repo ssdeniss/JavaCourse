@@ -13,7 +13,7 @@ public class Main {
 // Without session, you can't do some operations with java objects
         try {
             Session session = factory.getCurrentSession();
-            Employee emp = new Employee("Denis", "Seremet", "IT", 500);
+            Employee emp = new Employee("Alex", "Smith", "HR", 300);
             session.beginTransaction();
             session.save(emp);
             session.getTransaction().commit();
