@@ -7,6 +7,8 @@ Java Objects in Data Base
 - Connection between tables
 
     One-to-One : School - Director
+        uni-directional
+        bi-directional
 
                             / Employee
     One-to-Many: Department - Employee

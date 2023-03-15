@@ -1,11 +1,11 @@
-package com.denis.course.Hibernate.Entity;
+package com.denis.course.Hibernate.Connections.OneToOne.Entity;
 
 import jakarta.persistence.*;
 import lombok.*;
 
 
 @Entity // this class will have an image in database
-@Table(name = "workers") // to which table
+@Table(name = "employees") // to which table
 @NoArgsConstructor
 @Getter
 @Setter
@@ -22,6 +22,9 @@ public class Employee {
     private String department;
     @Column(name = "salary")
     private int salary;
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "details_id")
+    private Detail empDetail;
 
     public Employee(String name, String surname, String department, int salary) {
         this.name = name;

@@ -10,18 +10,18 @@ public class Delete {
     public static void main(String[] args) {
         SessionFactory factory = new Configuration()
                 .configure("hibernate.cfg.xml")
-                .addAnnotatedClass(Employee.class)
+                .addAnnotatedClass(Workers.class)
                 .buildSessionFactory();
         try {
             Session session = factory.getCurrentSession();
             session.beginTransaction();
 
-            Employee emp = session.get(Employee.class, 2); // Delete employer with id = 2
+            Workers emp = session.get(Workers.class, 2); // Delete employer with id = 2
             session.delete(emp);
 
-            session.createQuery("delete Employee " + "where name = 'Alex'"); // Delete employer with name Alex
+            session.createQuery("delete Workers " + "where name = 'Alex'"); // Delete employer with name Alex
 
-            List emps = session.createQuery("from Employee").getResultList();
+            List emps = session.createQuery("from Workers").getResultList();
             session.getTransaction().commit();
             for (Object e : emps) {
                 System.out.println(e);

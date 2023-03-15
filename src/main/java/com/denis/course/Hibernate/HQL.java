@@ -10,7 +10,7 @@ public class HQL {
     public static void main(String[] args) {
         SessionFactory factory = new Configuration()
                 .configure("hibernate.cfg.xml")
-                .addAnnotatedClass(Employee.class)
+                .addAnnotatedClass(Workers.class)
                 .buildSessionFactory();
 // Without session, you can't do some operations with java objects
         try {
@@ -18,7 +18,7 @@ public class HQL {
             session.beginTransaction();
 
 //            List emps = session.createQuery("from Employee").getResultList(); // Get all employers
-            List emps = session.createQuery("from Employee " + "where name = 'Denis' AND salary > 200").getResultList(); // Get by name
+            List emps = session.createQuery("from Workers " + "where name = 'Denis' AND salary > 200").getResultList(); // Get by name
             System.out.println(" ");
             for (Object e : emps) {
                 System.out.println(e);
